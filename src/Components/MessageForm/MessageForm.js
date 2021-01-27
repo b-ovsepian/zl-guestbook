@@ -117,21 +117,8 @@ const MessageForm = () => {
     if (!name || !text) {
       return;
     }
-    const date = new Date();
-    var options = {
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-    };
-    dispatch(
-      messagesOperations.addMessage(
-        name,
-        text,
-        date.toLocaleString("ru", options)
-      )
-    );
+
+    dispatch(messagesOperations.addMessage(name, text));
     setForm({ ...formInitialState });
   };
 
